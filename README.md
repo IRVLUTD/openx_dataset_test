@@ -8,6 +8,10 @@ pip install -r requirements.txt
 
 # Download dataset
 
+Check dataset details here: https://github.com/google-deepmind/open_x_embodiment
+
+Dataset spreadsheet: https://docs.google.com/spreadsheets/d/1rPBD77tk60AEIGZrGSODwyyzs5FgCU9Uz3h-3_t2A9g/edit#gid=0
+
 Example for the jaco_play dataset:
 ```
 gsutil -m rsync -r gs://gresearch/robotics/jaco_play .\tensorflow_datasets\jaco_play
