@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot name="jaco" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- include the macro library you pasted -->
+  <xacro:include filename="$(find jaco_description)/urdf/jaco_arm.urdf.xacro"/>
+
+  <!-- pick a base link name (root) -->
+  <link name="base_link"/>
+
+  <!-- instantiate the macro -->
+  <xacro:jaco_arm
+      parent="base_link"
+      xyz="0 0 0"
+      rpy="0 0 0"
+      simple_collisions="0"
+      gazebo_robot_name="robot_description" />
+
+</robot>
