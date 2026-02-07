@@ -128,13 +128,13 @@ def summarize_action(action: Any, max_items: int = 3) -> str:
                 flat = arr_v.reshape(-1)
                 shown = np.round(flat[:max_items], 2)
                 more = "" if flat.size <= max_items else f"…(+{flat.size - max_items})"
-                parts.append(f"{k}:{shown}{more}")
+                parts.append(f"{k}:{shown}{more}\n")
             else:
                 # If nested dict, just show keys
                 if isinstance(v, dict):
-                    parts.append(f"{k}:(dict keys={list(v.keys())[:4]})")
+                    parts.append(f"{k}:(dict keys={list(v.keys())[:4]})\n")
                 else:
-                    parts.append(f"{k}:(type {type(v).__name__})")
+                    parts.append(f"{k}:(type {type(v).__name__})\n")
         return "action{" + ", ".join(parts) + "}"
 
     # Fallback
