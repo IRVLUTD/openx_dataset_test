@@ -2,3 +2,5 @@ tensorflow
 pybullet
 gsutil
 matplotlib
+pycocotools
+opencv-python
