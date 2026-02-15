@@ -17,22 +17,30 @@ Example for the jaco_play dataset:
 gsutil -m rsync -r gs://gresearch/robotics/jaco_play .\tensorflow_datasets\jaco_play
 ```
 
+# Export dataset
+```
+python .\scripts\save_openx_episode.py --dataset_dir .\tensorflow_datasets\austin_buds\0.1.0 --split train --episode 0 --out_dir .\openx_exports\ --stride 12
+```
+
 # Visualization
+```
+python .\scripts\visualize_dataset.py --dataset_dir tensorflow_datasets\jaco_play\0.1.0\
+```
 
 1. Visualize an episode
 ```
-python .\visualize_dataset.py --dataset_dir tensorflow_datasets\jaco_play\0.1.0\
+python .\scripts\visualize_dataset.py --dataset_dir tensorflow_datasets\jaco_play\0.1.0\
 ```
 
 ![Demo image](pics/jaco_play.png)
 
 2. Visualize the robot model
 ```
-python .\vis_urdf_pybullet.py --robot jaco --urdf robots/jaco_description/urdf/jaco_arm.urdf --q -1.8585522 4.022645 1.7151797 -0.3398039 1.0661805 -0.8476771 0.41148704 0.40163106
+python .\scripts\vis_urdf_pybullet.py --robot jaco --urdf robots/jaco_description/urdf/jaco_arm.urdf --q -1.8585522 4.022645 1.7151797 -0.3398039 1.0661805 -0.8476771 0.41148704 0.40163106
 ```
 <img src="pics/jaco_model.png" width="300">
 
 ```
-python .\vis_urdf_pybullet.py --robot panda --urdf .\robots\franka_description\robots\panda_arm_hand.urdf --q 0.0 -0.5 0.0 -2.0 0.0 2.0 0.8 0.02 0.02
+python .\scripts\vis_urdf_pybullet.py --robot panda --urdf .\robots\franka_description\robots\panda_arm_hand.urdf --q 0.0 -0.5 0.0 -2.0 0.0 2.0 0.8 0.02 0.02
 ```
 <img src="pics/panda_model.png" width="300">

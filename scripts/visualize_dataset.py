@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-vis_jaco_play_openx.py
+visualize_dataset.py
 
 Robust visualizer for Open X-Embodiment jaco_play downloaded locally as an RLDS/TFDS directory dataset.
 
@@ -11,7 +11,7 @@ Robust visualizer for Open X-Embodiment jaco_play downloaded locally as an RLDS/
 - Robustly summarizes action even if it's a nested dict
 
 Usage:
-  python vis_jaco_play_openx.py --dataset_dir "D:/openx/jaco_play/0.1.0" --split train --episode 0 --steps 12
+  python visualize_dataset.py --dataset_dir "D:/openx/jaco_play/0.1.0" --split train --episode 0 --steps 12
 """
 
 import argparse
