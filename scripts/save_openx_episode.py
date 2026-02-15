@@ -223,7 +223,7 @@ def save_episode(
             wrist = decode_image_maybe(wrist_raw, channels=channels)
 
         # Joints
-        joint_raw, joint_used = _get_obs_field(obs, [joint_key, "joint_pos", "joints", "robot_joint_positions"])
+        joint_raw, joint_used = _get_obs_field(obs, [joint_key, "joint_pos", "joints", "robot_joint_positions", "state"])
         joints = _as_float_array(joint_raw)
 
         # Timestamp (best-effort; RLDS often has 'timestamp' fields, varies by dataset)
