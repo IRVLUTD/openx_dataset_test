@@ -208,7 +208,10 @@ def save_episode(
 
     for t in range(0, len(steps), max(1, stride)):
         s = steps[t]
+        print(f'============================{t}============================')
+        print('step keys:', s.keys())
         obs = s.get("observation", {})
+        print('observation keys:', obs.keys())
 
         # Images
         rgb_raw, rgb_used = _get_obs_field(obs, [image_key, "image"])
@@ -224,6 +227,7 @@ def save_episode(
 
         # Joints
         joint_raw, joint_used = _get_obs_field(obs, [joint_key, "joint_pos", "joints", "robot_joint_positions", "state"])
+        print(joint_raw)
         joints = _as_float_array(joint_raw)
 
         # Timestamp (best-effort; RLDS often has 'timestamp' fields, varies by dataset)
